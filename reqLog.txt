@@ -1,0 +1,9 @@
+20231012	13:54:26	ffc17d07-f667-4cab-b0e6-d3f073c9d992	GET	undefined	/
+20231012	13:54:26	a51809be-810d-4838-8bf5-07ce751cc4b9	GET	undefined	/css/style.css
+20231012	13:54:27	de627938-3fa1-4d6f-a160-e6d87f4f46ff	GET	undefined	/favicon.ico
+20231012	13:54:39	79659e6e-c9dc-4897-a543-969551280260	GET	undefined	/df
+20231012	13:54:39	0720aa5f-0499-49ab-b178-0d2de4ff4e24	GET	undefined	/css/style.css
+20231012	13:54:45	67139fcd-0e89-47ab-afbd-a6cef58ad0f9	GET	undefined	/
+20231012	13:54:45	71eee882-f29a-4690-b92a-f8ee7e3931b7	GET	undefined	/css/style.css
+20231012	13:54:51	e0244fe5-9982-46cb-bcf3-5e9edfe62782	GET	undefined	/index
+20231012	13:54:51	adafd3a0-48aa-4269-b73c-e3c0b517390d	GET	undefined	/css/style.css
