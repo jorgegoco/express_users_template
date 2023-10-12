@@ -62,3 +62,6 @@
 20231012	21:45:23	274d19b7-6d2f-40c4-bf27-85750a53cc9d	POST	undefined	/auth
 20231012	21:45:32	3f5076ec-cb09-44a3-b128-e77c43f99d2c	POST	undefined	/auth
 20231012	21:45:48	247f6b61-0e13-4e27-9f86-6bf9e937ea4f	GET	undefined	/refresh
+20231012	22:06:54	96d0e714-6a38-4fab-8ac7-7480411235ad	GET	undefined	/logout
+20231012	22:07:46	2dc2cea5-21fc-465d-9cec-be5f006e2acc	GET	undefined	/refresh
+20231012	22:07:59	a40fa72b-8657-4ac8-8757-15f918484d8a	POST	undefined	/auth
