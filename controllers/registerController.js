@@ -16,9 +16,7 @@ const handleNewUser = async (req, res) => {
       .status(400)
       .json({ message: "Username and password are required" })
   // check for duplicate usernames in the users database
-  const duplicate = usersDB.users.find((person) => {
-    person.username === user
-  })
+  const duplicate = usersDB.users.find((person) => person.username === user)
   if (duplicate) return res.sendStatus(409) // Conflict
   try {
     // encrypt the password
