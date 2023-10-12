@@ -20,6 +20,7 @@ app.use("/", express.static(path.join(__dirname, "/public")))
 
 // routes
 app.use("/", require("./routes/root"))
+app.use("/register", require("./routes/register"))
 
 app.all("*", (req, res) => {
   res.status(404)
