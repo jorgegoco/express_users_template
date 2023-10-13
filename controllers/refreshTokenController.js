@@ -26,7 +26,7 @@ const handleRefreshToken = (req, res) => {
         username: decoded.username,
       },
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: "40s" }
+      { expiresIn: "50s" }
     )
     res.json({ accessToken })
   })
