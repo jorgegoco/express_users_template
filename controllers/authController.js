@@ -23,9 +23,10 @@ const handleLogin = async (req, res) => {
   // evaluate password
   const match = await bcrypt.compare(pwd, foundUser.password)
   if (match) {
+    const roles = Object.values(foundUser.roles)
     // create JWTs
     const accessToken = jwt.sign(
-      { username: foundUser.username },
+      { UserInfo: { username: foundUser.username, roles: roles } },
       process.env.ACCESS_TOKEN_SECRET,
       { expiresIn: "50s" }
     )
@@ -47,7 +48,7 @@ const handleLogin = async (req, res) => {
     res.cookie("jwt", refreshToken, {
       httpOnly: true, // This avoids any foreign javascript code to have access to that cookie
       sameSite: "None",
-      secure: true,
+      secure: true, // when working in dev mode, like thunderclient, this must be deleted to accept cookies with http
       maxAge: 24 * 60 * 60 * 1000,
     })
     res.json({ accessToken })

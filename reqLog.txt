@@ -119,3 +119,17 @@
 20231013	18:58:09	1cd022da-582c-413d-8c52-1be3a3e871f0	GET	undefined	/employees/
 20231013	18:58:12	7cca468e-ef86-4dba-b2fa-0d1d948c8859	GET	undefined	/employees/
 20231013	18:58:14	aa211d41-d710-44e1-b3b8-bc00af368be5	GET	undefined	/employees/
+20231013	19:55:57	2b9a14fc-949d-44e5-9d1b-21cac56e841a	POST	undefined	/auth
+20231013	19:56:18	ea3ca97c-be10-4bd0-98ae-563805111e71	GET	undefined	/employees/
+20231013	19:56:30	79d7e41b-1851-4f2d-84d2-546d6527eea2	POST	undefined	/employees
+20231013	19:56:38	22b47e08-70bb-43ed-91cf-c61a8ac117a2	GET	undefined	/employees/
+20231013	19:58:48	2395cf9b-465a-49a4-b81a-ab82dc880309	POST	undefined	/auth
+20231013	19:59:11	690da2ab-d316-4cee-8336-75679c53e0af	POST	undefined	/employees
+20231013	19:59:18	75f7c522-d7e4-446f-9375-8fbdec0706d9	DELETE	undefined	/employees
+20231013	19:59:29	38ad4e5d-869c-45a7-834b-3f05fdbd8587	GET	undefined	/employees/
+20231013	19:59:39	6748cc08-c182-4523-aa08-7179bc71e5c5	GET	undefined	/logout
+20231013	19:59:56	6b36665b-ea9c-434a-b996-db7c6aee33e5	POST	undefined	/auth
+20231013	20:00:12	2254e1ee-0416-471f-bbdc-d6d726383363	DELETE	undefined	/employees
+20231013	20:00:30	d0c56736-522a-4f44-86d0-2412b60146bf	POST	undefined	/auth
+20231013	20:00:55	b4f408b7-a5d9-4f9e-81c7-2604851a8b2f	DELETE	undefined	/employees
+20231013	20:01:09	a4949aea-8d45-47e3-9a74-0a404f57a76e	GET	undefined	/employees/
