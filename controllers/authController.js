@@ -51,7 +51,7 @@ const handleLogin = async (req, res) => {
       secure: true, // when working in dev mode, like thunderclient, this must be deleted to accept cookies with http
       maxAge: 24 * 60 * 60 * 1000,
     })
-    res.json({ accessToken })
+    res.json({ roles, accessToken })
   } else {
     res.sendStatus(401)
   }
