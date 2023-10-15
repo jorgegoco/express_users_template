@@ -24,7 +24,7 @@
 
 # 📖 Express Users Template <a name="about-project"></a>
 
-**Express Users Template** sets up a back-end template with JWT user authentication and authorization.
+**Express Users Template** sets up a back-end template with JWT user authentication and authorization, and MongoDB as database.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -34,6 +34,13 @@
   <summary>Server</summary>
   <ul>
     <li><a href="https://expressjs.com/">Express.js</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.mongodb.com/">MongoDB</a></li>
   </ul>
 </details>
 
