@@ -18,7 +18,7 @@ const handleLogin = async (req, res) => {
     const accessToken = jwt.sign(
       { UserInfo: { username: foundUser.username, roles: roles } },
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: "2m" }
+      { expiresIn: "5m" }
     )
     const refreshToken = jwt.sign(
       { username: foundUser.username },
@@ -32,7 +32,7 @@ const handleLogin = async (req, res) => {
 
     res.cookie("jwt", refreshToken, {
       httpOnly: true, // This avoids any foreign javascript code to have access to that cookie
-      sameSite: "None",
+      sameSite: "Lax",
       // secure: true, // when working in dev mode, like thunderclient, this must be deleted to accept cookies with http
       maxAge: 24 * 60 * 60 * 1000,
     })
