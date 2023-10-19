@@ -53,7 +53,7 @@ const handleRefreshToken = async (req, res) => {
       )
       // Saving refreshToken with current user
       foundUser.refreshToken = [...newRefreshTokenArray, newRefreshToken]
-      const result = await foundUser.save()
+      await foundUser.save()
 
       res.cookie("jwt", newRefreshToken, {
         httpOnly: true, // This avoids any foreign javascript code to have access to that cookie
