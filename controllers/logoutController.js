@@ -10,7 +10,7 @@ const handleLogout = async (req, res) => {
   // Is refreshToken in db?
   const foundUser = await User.findOne({ refreshToken }).exec()
   if (!foundUser) {
-    res.clearCookie("jwt", { httpOnly: true, sameSite: "None", secure: true })
+    res.clearCookie("jwt", { httpOnly: true, sameSite: "None" }) // add secure: true in https connections
     return res.sendStatus(204)
   }
 

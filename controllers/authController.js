@@ -3,7 +3,8 @@ const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 
 const handleLogin = async (req, res) => {
-  const cookies = req.cookies
+  const cookies = req.cookies.jwt
+  console.log(`cookie available at login: ${JSON.stringify(cookies)}`)
   const { user, pwd } = req.body
   if (!user || !pwd)
     return res
@@ -14,25 +15,42 @@ const handleLogin = async (req, res) => {
   // evaluate password
   const match = await bcrypt.compare(pwd, foundUser.password)
   if (match) {
-    const roles = Object.values(foundUser.roles)
+    const roles = Object.values(foundUser.roles).filter(Boolean)
     // create JWTs
     const accessToken = jwt.sign(
       { UserInfo: { username: foundUser.username, roles: roles } },
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: "10s" }
+      { expiresIn: "15m" }
     )
     const newRefreshToken = jwt.sign(
       { username: foundUser.username },
       process.env.REFRESH_TOKEN_SECRET,
-      { expiresIn: "15s" }
+      { expiresIn: "1d" }
     )
 
-    let newRefreshTokenArray = !cookies?.jwt
+    let newRefreshTokenArray = !cookies
       ? foundUser.refreshToken
-      : foundUser.refreshToken.filter((rt) => rt !== cookies.jwt)
+      : foundUser.refreshToken.filter((rt) => rt !== cookies)
 
-    if (cookies?.jwt)
-      res.clearCookie("jwt", { httpOnly: true, sameSite: "None", secure: true })
+    if (cookies) {
+      /* 
+            Scenario added here: 
+                1) User logs in but never uses RT and does not logout 
+                2) RT is stolen
+                3) If 1 & 2, reuse detection is needed to clear all RTs when user logs in
+            */
+      const refreshToken = cookies.jwt
+      const foundToken = await User.findOne({ refreshToken }).exec()
+
+      // Detected refresh token reuse!
+      if (!foundToken) {
+        console.log("attempted refresh token reuse at login!")
+        // clear out ALL previous refresh tokens
+        newRefreshTokenArray = []
+      }
+
+      res.clearCookie("jwt", { httpOnly: true, sameSite: "None" }) // add secure: true in https connections
+    }
 
     // Saving refreshToken with current user
     foundUser.refreshToken = [...newRefreshTokenArray, newRefreshToken]
